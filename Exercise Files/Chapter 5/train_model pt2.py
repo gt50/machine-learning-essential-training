@@ -24,3 +24,4 @@ X = features_df.as_matrix()
 y = df['sale_price'].as_matrix()
 
 # Split the data set in a training set (70%) and a test set (30%)
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3)

@@ -37,7 +37,7 @@ param_grid = {
 }
 
 # Define the grid search we want to run. Run it with four cpus in parallel.
-gs_cv = GridSearchCV(model, param_grid, n_jobs=4)
+gs_cv = GridSearchCV(model, param_grid, n_jobs=1)
 
 # Run the grid search - on only the training data!
 gs_cv.fit(X_train, y_train)

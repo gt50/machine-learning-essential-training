@@ -8,7 +8,7 @@ feature_labels = np.array(['year_built', 'stories', 'num_bedrooms', 'full_bathro
 model = joblib.load('trained_house_classifier_model.pkl')
 
 # Create a numpy array based on the model's feature importances
-importance =
+importance = model.feature_importances_
 
 # Sort the feature labels based on the feature importance rankings from the model
 feauture_indexes_by_importance = importance.argsort()

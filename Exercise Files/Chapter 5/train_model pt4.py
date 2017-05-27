@@ -42,9 +42,9 @@ model.fit(X_train, y_train)
 joblib.dump(model, 'trained_house_classifier_model.pkl')
 
 # Find the error rate on the training set
-mse =
+mse = mean_absolute_error(y_train, model.predict(X_train))
 print("Training Set Mean Absolute Error: %.4f" % mse)
 
 # Find the error rate on the test set
-mse =
+mse = mean_absolute_error(y_test, model.predict(X_test))
 print("Test Set Mean Absolute Error: %.4f" % mse)

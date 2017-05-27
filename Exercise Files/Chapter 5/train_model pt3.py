@@ -27,7 +27,15 @@ y = df['sale_price'].as_matrix()
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=0)
 
 # Fit regression model
-
+model = ensemble.GradientBoostingRegressor(
+    n_estimators=1000,
+    learning_rate=0.1,
+    max_depth=6,
+    min_samples_leaf=9,
+    max_features=0.1,
+    loss='huber'
+)
+model.fit(X_train, y_train)
 
 # Save the trained model to a file so we can use it in other programs
 joblib.dump(model, 'trained_house_classifier_model.pkl')
